@@ -1,0 +1,33 @@
+$kind: http-request
+description: |-
+  El servidor calcula precioUnitario, subtotal y total, y descuenta el stock.
+
+  Errores:
+  - 404 si el cliente o un producto no existe.
+  - 400 si un detalle tiene cantidad <= 0.
+  - 400 si no hay stock suficiente.
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "clienteId": 1,
+      "detalles": [
+        { "productoId": 1, "cantidad": 2 },
+        { "productoId": 2, "cantidad": 1 }
+      ]
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status 201', () => pm.response.to.have.status(201));
+      let body = pm.response.json();
+      pm.test('Total = suma de subtotales', () => {
+          let suma = body.detalles.reduce((acc, d) => acc + d.subtotal, 0);
+          pm.expect(body.total).to.eql(suma);
+      });
+    language: text/javascript
+order: 1000

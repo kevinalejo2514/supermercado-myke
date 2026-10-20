@@ -1,0 +1,17 @@
+$kind: http-request
+name: "ERROR 400: producto con precio negativo"
+description: "Esperado: 400 Bad Request con mensaje 'El precio debe ser mayor a 0'."
+url: "{{baseUrl}}/api/productos"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Producto malo",
+      "precio": -5,
+      "stock": 10,
+      "codigoBarras": "999"
+    }
+order: 9000

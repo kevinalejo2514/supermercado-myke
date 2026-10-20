@@ -1,0 +1,17 @@
+$kind: http-request
+name: "ERROR 400: stock insuficiente"
+description: "Esperado: 400 'Stock insuficiente para el producto ...'. El stock NO debe cambiar."
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "clienteId": 1,
+      "detalles": [
+        { "productoId": 1, "cantidad": 99999 }
+      ]
+    }
+order: 8000

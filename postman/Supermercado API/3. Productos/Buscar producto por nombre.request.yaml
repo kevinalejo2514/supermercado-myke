@@ -1,0 +1,9 @@
+$kind: http-request
+description: Deberia encontrar 'Gaseosa Cola...' aunque se escriba en minusculas.
+url: "{{baseUrl}}/api/productos/buscar?nombre=gaseosa"
+method: GET
+queryParams:
+  - key: nombre
+    value: gaseosa
+    description: Sin distinguir mayusculas
+order: 7000

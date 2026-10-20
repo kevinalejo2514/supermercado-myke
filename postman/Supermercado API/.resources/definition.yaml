@@ -1,0 +1,12 @@
+$kind: collection
+description: |-
+  Coleccion completa para probar la API REST del supermercado.
+
+  ORDEN SUGERIDO:
+  1. Crear categorias y proveedores.
+  2. Crear productos (usa los ids devueltos en el paso 1).
+  3. Crear clientes.
+  4. Registrar ventas.
+  5. Probar los casos de error (400/404/409).
+variables:
+  baseUrl: http://localhost:8081

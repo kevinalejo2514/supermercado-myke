@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/api/productos/stock-bajo?limite=10"
+method: GET
+queryParams:
+  - key: limite
+    value: "10"
+    description: Stock menor o igual al limite
+order: 8000

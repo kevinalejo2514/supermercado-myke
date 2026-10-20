@@ -1,0 +1,20 @@
+$kind: http-request
+description: "Esperado: 201 Created. Caso error: 400 si el nombre viene vacio."
+url: "{{baseUrl}}/api/categorias"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Bebidas",
+      "descripcion": "Gaseosas, jugos y agua"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status 201 Created', () => pm.response.to.have.status(201));
+      pm.test('Tiene id', () => pm.expect(pm.response.json().id).to.be.ok);
+    language: text/javascript
+order: 1000

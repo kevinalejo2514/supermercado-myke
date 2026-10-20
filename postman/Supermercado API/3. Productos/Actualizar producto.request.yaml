@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/api/productos/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Gaseosa Cola 600ml",
+      "precio": 1.75,
+      "stock": 120,
+      "codigoBarras": "7750000000017",
+      "categoriaId": 1,
+      "proveedorId": 1
+    }
+order: 4000

@@ -1,0 +1,17 @@
+$kind: http-request
+name: "ERROR 409: codigo de barras duplicado"
+description: "Usar el mismo codigoBarras de un producto ya creado. Esperado: 409 Conflict."
+url: "{{baseUrl}}/api/productos"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Producto repetido",
+      "precio": 2.00,
+      "stock": 5,
+      "codigoBarras": "7750000000017"
+    }
+order: 10000

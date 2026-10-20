@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/api/proveedores/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Distribuidora El Sol S.A.",
+      "telefono": "555-0199",
+      "correo": "contacto@elsol.com"
+    }
+order: 4000

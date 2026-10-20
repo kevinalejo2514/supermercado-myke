@@ -1,0 +1,15 @@
+$kind: http-request
+description: "Esperado: 201. Error: 409 si el documento ya existe."
+url: "{{baseUrl}}/api/clientes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Maria Lopez",
+      "documento": "12345678",
+      "telefono": "999888777"
+    }
+order: 1000

@@ -1,0 +1,15 @@
+$kind: http-request
+name: "ERROR 400: venta sin detalles"
+description: "Esperado: 400 'La venta debe tener al menos un detalle'."
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "clienteId": 1,
+      "detalles": []
+    }
+order: 6000

@@ -1,0 +1,27 @@
+$kind: http-request
+description: |-
+  Cambiar categoriaId/proveedorId por los ids reales creados antes.
+  Esperado: 201.
+  Errores: 400 precio<=0 o stock<0; 409 codigo de barras duplicado; 404 categoria/proveedor inexistente.
+url: "{{baseUrl}}/api/productos"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Gaseosa Cola 600ml",
+      "precio": 1.50,
+      "stock": 100,
+      "codigoBarras": "7750000000017",
+      "categoriaId": 1,
+      "proveedorId": 1
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status 201', () => pm.response.to.have.status(201));
+      pm.test('Stock inicial correcto', () => pm.expect(pm.response.json().stock).to.eql(100));
+    language: text/javascript
+order: 1000

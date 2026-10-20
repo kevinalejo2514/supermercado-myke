@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{baseUrl}}/api/categorias/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Bebidas y jugos",
+      "descripcion": "Bebidas en general"
+    }
+order: 4000

@@ -1,0 +1,17 @@
+$kind: http-request
+name: "ERROR 400: cantidad en cero"
+description: "Esperado: 400 'La cantidad debe ser mayor a 0'."
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "clienteId": 1,
+      "detalles": [
+        { "productoId": 1, "cantidad": 0 }
+      ]
+    }
+order: 7000

@@ -1,0 +1,5 @@
+$kind: http-request
+description: "Esperado: 204 No Content"
+url: "{{baseUrl}}/api/productos/1"
+method: DELETE
+order: 5000

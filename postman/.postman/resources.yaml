@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: bc2bc7fa-7da1-4d45-8e9c-316e8b42993b
+
+localResources:
+  collections:
+    - ../Supermercado API

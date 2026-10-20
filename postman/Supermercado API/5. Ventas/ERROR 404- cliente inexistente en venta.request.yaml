@@ -1,0 +1,17 @@
+$kind: http-request
+name: "ERROR 404: cliente inexistente en venta"
+description: "Esperado: 404 'Cliente con id 99999 no existe'."
+url: "{{baseUrl}}/api/ventas"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "clienteId": 99999,
+      "detalles": [
+        { "productoId": 1, "cantidad": 1 }
+      ]
+    }
+order: 9000

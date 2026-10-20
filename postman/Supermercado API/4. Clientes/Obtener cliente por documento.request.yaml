@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{baseUrl}}/api/clientes/documento/12345678"
+method: GET
+order: 4000

@@ -1,0 +1,6 @@
+$kind: http-request
+name: "ERROR 404: producto inexistente"
+description: "Esperado: 404 con JSON { message: 'Producto con id 99999 no existe' }"
+url: "{{baseUrl}}/api/productos/99999"
+method: GET
+order: 11000

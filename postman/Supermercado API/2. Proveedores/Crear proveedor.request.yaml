@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/api/proveedores"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "nombre": "Distribuidora El Sol",
+      "telefono": "555-0101",
+      "correo": "ventas@elsol.com"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test('Status 201', () => pm.response.to.have.status(201));
+    language: text/javascript
+order: 1000

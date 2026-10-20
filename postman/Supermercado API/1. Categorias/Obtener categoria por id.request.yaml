@@ -1,0 +1,5 @@
+$kind: http-request
+description: "Esperado: 200. Si no existe: 404 con mensaje JSON."
+url: "{{baseUrl}}/api/categorias/1"
+method: GET
+order: 3000

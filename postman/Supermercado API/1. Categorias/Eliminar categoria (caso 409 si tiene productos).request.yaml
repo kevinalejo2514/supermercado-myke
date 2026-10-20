@@ -1,0 +1,5 @@
+$kind: http-request
+description: 204 si no tiene productos. 409 Conflict si tiene productos asociados.
+url: "{{baseUrl}}/api/categorias/1"
+method: DELETE
+order: 5000

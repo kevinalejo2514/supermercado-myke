@@ -1,0 +1,5 @@
+$kind: http-request
+description: "Esperado: 204. Despues, GET /api/productos debe mostrar el stock repuesto."
+url: "{{baseUrl}}/api/ventas/1"
+method: DELETE
+order: 10000
